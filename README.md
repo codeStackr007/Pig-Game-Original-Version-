@@ -30,7 +30,7 @@ The game has been used in classrooms to teach probability and decision‑making,
 
 ## 📸 Preview
 
-![Live Preview]()
+[Live Preview](https://pig-game-original-version.vercel.app/)
 
 ## 🚀 How to Play
 
