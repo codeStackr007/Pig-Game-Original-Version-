@@ -1,0 +1,190 @@
+/* ====================================
+   ===== CSS RESETS & BASE STYLES =====
+   ==================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ====================================
+   ======= CUSTOM VARIABLES ===========
+   ==================================== */
+:root {
+  --color-primary: #c7365f;
+  --color-bg-active: rgba(255, 255, 255, 0.4);
+  --color-bg-winner: #2f2f2f;
+  --color-white: #fff;
+
+  --fs-large: 8rem;
+  --fs-medium: 4rem;
+  --fs-small: 1.8rem;
+
+  --fw-light: 300;
+  --fw-bold: 700;
+}
+
+/* ====================================
+   ========= MAIN GAME LAYOUT =========
+   ==================================== */
+main {
+  position: relative;
+  width: 100rem;
+  height: 60rem;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+}
+
+.player {
+  flex: 50%;
+  padding: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+/* ====================================
+   =========== PLAYER INFO ============
+   ==================================== */
+.name {
+  font-size: var(--fs-medium);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: var(--fw-light);
+  margin-bottom: 1rem;
+}
+
+.score {
+  font-size: var(--fs-large);
+  font-weight: var(--fw-light);
+  color: var(--color-primary);
+  margin-bottom: auto;
+}
+
+.player--active {
+  background-color: var(--color-bg-active);
+}
+.player--active .name {
+  font-weight: var(--fw-bold);
+}
+.player--active .score {
+  font-weight: 400;
+}
+
+.current {
+  background-color: var(--color-primary);
+  opacity: 0.8;
+  border-radius: 9px;
+  color: var(--color-white);
+  width: 65%;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.75s;
+}
+
+.current-label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  color: #ddd;
+}
+
+.current-score {
+  font-size: 3.5rem;
+}
+
+/* ====================================
+   ========== BUTTON STYLES ===========
+   ==================================== */
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #444;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border: none;
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.btn::first-letter {
+  font-size: 2.4rem;
+  margin-right: 0.7rem;
+}
+
+.btn--new {
+  top: 4rem;
+}
+.btn--roll {
+  top: 39.3rem;
+}
+.btn--hold {
+  top: 46.1rem;
+}
+
+.btn:active {
+  transform: translate(-50%, 3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+/* ====================================
+   ============ DICE IMAGE ============
+   ==================================== */
+.dice {
+  position: absolute;
+  left: 50%;
+  top: 16.5rem;
+  transform: translateX(-50%);
+  height: 10rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+/* ====================================
+   ========== WINNER STYLES ===========
+   ==================================== */
+.player--winner {
+  background-color: var(--color-bg-winner);
+}
+.player--winner .name,
+.player--winner .score {
+  color: var(--color-white);
+  font-weight: var(--fw-bold);
+}
+
+.hidden {
+  display: none;
+}
