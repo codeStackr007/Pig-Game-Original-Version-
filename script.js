@@ -18,7 +18,7 @@ const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 
 // ====================================
-// Sound Effects
+// Sound Effect
 // ====================================
 const clickSound = new Audio("sound/click.mp3");
 
